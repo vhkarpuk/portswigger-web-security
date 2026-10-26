@@ -2,7 +2,12 @@
 
 > **OWASP:** A01:2021 Broken Access Control · **CWE:** CWE-22
 
-<2-3 sentences on how you think about this class of vulnerability — the embryo of a blog-style write-up. Optional, fill as you go.>
+Path traversal happens when user input reaches a filesystem path without
+proper validation, letting an attacker step outside the intended directory
+with ../ sequences and read arbitrary files. The impact scales from
+information disclosure to a foothold, depending on what the web process can
+read. The labs below walk the defence-bypass ladder: naked traversal, then
+the filters that try to stop it and why each one fails.
 
 ## Labs
 
