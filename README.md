@@ -17,10 +17,10 @@ as evidence), impact, and remediation, mapped to OWASP Top 10 and CWE.
 | [File upload](04-file-upload/) | 0 / 6 | A05:2021 Security Misconfiguration |
 | [JWT](05-jwt/) | 0 / 6 | A07:2021 Identification and Authentication Failures |
 | [SQL injection](06-sql-injection/) | 2 / 9 | A03:2021 Injection |
-| [Authentication](07-authentication/) | 0 / 7 | A07:2021 Identification and Authentication Failures |
-| [Cross-site scripting](08-xss/) | 0 / 8 | A03:2021 Injection |
+| [Authentication](07-authentication/) | 1 / 7 | A07:2021 Identification and Authentication Failures |
+| [Cross-site scripting](08-xss/) | 1 / 8 | A03:2021 Injection |
 | [API testing](09-api-testing/) | 4 / 4 | OWASP API Security Top 10 2023 |
-| **Total** | **18 / 59** | |
+| **Total** | **20 / 59** | |
 
 ## Categories (attack order)
 
