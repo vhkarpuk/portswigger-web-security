@@ -12,15 +12,15 @@ as evidence), impact, and remediation, mapped to OWASP Top 10 and CWE.
 | Category | Done | OWASP |
 |----------|------|-------|
 | [Path traversal](01-path-traversal/) | 6 / 6 | A01:2021 Broken Access Control |
-| [Access control / IDOR](02-access-control-idor/) | 3 / 8 | A01:2021 Broken Access Control |
-| [SSRF](03-ssrf/) | 0 / 5 | A10:2021 SSRF |
+| [Access control / IDOR](02-access-control-idor/) | 5 / 8 | A01:2021 Broken Access Control |
+| [SSRF](03-ssrf/) | 1 / 5 | A10:2021 SSRF |
 | [File upload](04-file-upload/) | 0 / 6 | A05:2021 Security Misconfiguration |
 | [JWT](05-jwt/) | 0 / 6 | A07:2021 Identification and Authentication Failures |
 | [SQL injection](06-sql-injection/) | 2 / 9 | A03:2021 Injection |
 | [Authentication](07-authentication/) | 0 / 7 | A07:2021 Identification and Authentication Failures |
 | [Cross-site scripting](08-xss/) | 0 / 8 | A03:2021 Injection |
 | [API testing](09-api-testing/) | 4 / 4 | OWASP API Security Top 10 2023 |
-| **Total** | **15 / 59** | |
+| **Total** | **18 / 59** | |
 
 ## Categories (attack order)
 
