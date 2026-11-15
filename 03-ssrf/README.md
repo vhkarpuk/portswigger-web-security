@@ -18,5 +18,5 @@ naive SSRF to blacklist bypasses and chaining with an open redirect.
 |---|-----|-------|-----------|------|
 | 01 | [Basic SSRF against the local server](01-basic-ssrf-against-the-local-server.md) | Apprentice | Base SSRF (localhost/admin) | ✅ |
 | 02 | [Basic SSRF against another back-end system](02-basic-ssrf-against-another-back-end-system.md) | Apprentice | Pivot to internal back-end | ✅ |
-| 03 | [SSRF with blacklist-based input filter](03-ssrf-with-blacklist-based-input-filter.md) | Practitioner | Blacklist bypass (127.1, encoding) | ⬜ |
+| 03 | [SSRF with blacklist-based input filter](03-ssrf-with-blacklist-based-input-filter.md) | Practitioner | Blacklist bypass (127.1, encoding) | ✅ |
 | 04 | [SSRF with filter bypass via open redirection vulnerability](04-ssrf-with-filter-bypass-via-open-redirection-vulne.md) | Practitioner | Chain with open redirect | ⬜ |
