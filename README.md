@@ -19,10 +19,10 @@ Collaborator requires Burp Suite Professional and is not available in Community 
 | [File upload](04-file-upload/) | 1 / 6 | A05:2021 Security Misconfiguration |
 | [JWT](05-jwt/) | 2 / 6 | A07:2021 Identification and Authentication Failures |
 | [SQL injection](06-sql-injection/) | 4 / 8 | A03:2021 Injection |
-| [Authentication](07-authentication/) | 1 / 7 | A07:2021 Identification and Authentication Failures |
+| [Authentication](07-authentication/) | 3 / 7 | A07:2021 Identification and Authentication Failures |
 | [Cross-site scripting](08-xss/) | 2 / 8 | A03:2021 Injection |
 | [API testing](09-api-testing/) | 4 / 4 | OWASP API Security Top 10 2023 |
-| **Total** | **28 / 57** | |
+| **Total** | **30 / 57** | |
 
 ## Categories (attack order)
 
