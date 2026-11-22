@@ -20,7 +20,7 @@ time-based) and a WAF filter bypass.
 | 02 | [UNION attack, finding a column containing text](02-sql-injection-union-attack-finding-a-column-contai.md) | Practitioner | Column that accepts a string | ✅ |
 | 03 | [UNION attack, retrieving data from other tables](03-sql-injection-union-attack-retrieving-data-from-ot.md) | Practitioner | In-band extraction via UNION | ✅ |
 | 04 | [Listing the database contents on non-Oracle databases](04-sql-injection-attack-listing-the-database-contents.md) | Practitioner | Schema enumeration (information_schema) | ✅ |
-| 05 | [Blind SQL injection with conditional responses](05-blind-sql-injection-with-conditional-responses.md) | Practitioner | Boolean blind | ⬜ |
+| 05 | [Blind SQL injection with conditional responses](05-blind-sql-injection-with-conditional-responses.md) | Practitioner | Boolean blind | ✅ |
 | 06 | [Visible error-based SQL injection](06-visible-error-based-sql-injection.md) | Practitioner | Error-based | ⬜ |
 | 07 | [Blind SQL injection with time delays and information retrieval](07-blind-sql-injection-with-time-delays-and-informati.md) | Practitioner | Time-based blind | ⬜ |
 | 08 | [SQL injection with filter bypass via XML encoding](08-sql-injection-with-filter-bypass-via-xml-encoding.md) | Practitioner | WAF bypass via XML encoding | ⬜ |
