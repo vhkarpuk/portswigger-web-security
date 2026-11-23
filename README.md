@@ -5,7 +5,7 @@ vulnerability classes that matter most for web application penetration testing.
 Each write-up documents reconnaissance, exploitation (with raw HTTP request/response
 as evidence), impact, and remediation, mapped to OWASP Top 10 and CWE.
 
-**Scope:** 57 labs across 9 categories — the core web pentest surface.
+**Scope:** 57 labs across 9 categories, the core web pentest surface.
 Two out-of-band labs (blind SSRF / blind SQLi via Burp Collaborator) are out of scope:
 Collaborator requires Burp Suite Professional and is not available in Community Edition.
 
