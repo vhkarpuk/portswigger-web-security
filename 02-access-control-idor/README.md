@@ -1,52 +1,18 @@
-# PortSwigger Web Security Academy — Lab Write-ups
+# Access control / IDOR
 
-Hands-on write-ups of PortSwigger Web Security Academy labs, focused on the
-vulnerability classes that matter most for web application penetration testing.
-Each write-up documents reconnaissance, exploitation (with raw HTTP request/response
-as evidence), impact, and remediation, mapped to OWASP Top 10 and CWE.
+> **OWASP:** A01:2021 Broken Access Control · **CWE:** CWE-639 / CWE-284
 
-**Scope:** 57 labs across 9 categories — the core web pentest surface.
-Two out-of-band labs (blind SSRF / blind SQLi via Burp Collaborator) are out of scope:
-Collaborator requires Burp Suite Professional and is not available in Community Edition.
+Access control flaws occur when the application fails to enforce what a user is allowed to see or do, letting one user reach data or functions that belong to someone else. IDOR is the common shape: an object reference in the request (an id, a filename) is trusted without a server-side check that the current user owns that object. These labs cover horizontal access (reaching peer users) and vertical access (reaching higher privilege), plus the bypasses that defeat weak, request-controlled checks.
 
-## Progress
+## Labs
 
-| Category | Done | OWASP |
-|----------|------|-------|
-| [Path traversal](01-path-traversal/) | 6 / 6 | A01:2021 Broken Access Control |
-| [Access control / IDOR](02-access-control-idor/) | 8 / 8 | A01:2021 Broken Access Control |
-| [SSRF](03-ssrf/) | 3 / 4 | A10:2021 SSRF |
-| [File upload](04-file-upload/) | 1 / 6 | A05:2021 Security Misconfiguration |
-| [JWT](05-jwt/) | 2 / 6 | A07:2021 Identification and Authentication Failures |
-| [SQL injection](06-sql-injection/) | 4 / 8 | A03:2021 Injection |
-| [Authentication](07-authentication/) | 3 / 7 | A07:2021 Identification and Authentication Failures |
-| [Cross-site scripting](08-xss/) | 4 / 8 | A03:2021 Injection |
-| [API testing](09-api-testing/) | 4 / 4 | OWASP API Security Top 10 2023 |
-| **Total** | **35 / 57** | |
-
-## Categories (attack order)
-
-1. [Path traversal](01-path-traversal/)
-2. [Access control / IDOR](02-access-control-idor/)
-3. [SSRF](03-ssrf/)
-4. [File upload](04-file-upload/)
-5. [JWT](05-jwt/)
-6. [SQL injection](06-sql-injection/)
-7. [Authentication](07-authentication/)
-8. [Cross-site scripting](08-xss/)
-9. [API testing](09-api-testing/)
-
-## How this repo is organised
-
-- One folder per vulnerability class, numbered in the order I worked through them.
-- One Markdown file per lab, following [`TEMPLATE.md`](TEMPLATE.md).
-- Evidence is pasted as raw HTTP request/response in code blocks — searchable and
-  faithful, the way a real client report reads.
-
-## Author
-
-Victor Karpuk — [github.com/vhkarpuk](https://github.com/vhkarpuk)
-
----
-
-*Write-ups are my own. Labs belong to [PortSwigger Web Security Academy](https://portswigger.net/web-security).*
+| # | Lab | Level | Mechanism | Done |
+|---|-----|-------|-----------|------|
+| 01 | [User ID controlled by request parameter](01-user-id-controlled-by-request-parameter.md) | Apprentice | Basic IDOR | ✅ |
+| 02 | [User ID controlled by request parameter, with unpredictable user IDs](02-user-id-controlled-by-request-parameter-with-unpre.md) | Apprentice | IDOR with unpredictable ID | ✅ |
+| 03 | [User ID controlled by request parameter with data leakage in redirect](03-user-id-controlled-by-request-parameter-with-data-.md) | Apprentice | Data leakage in redirect | ✅ |
+| 04 | [Insecure direct object references](04-insecure-direct-object-references.md) | Apprentice | IDOR on static file/resource | ✅ |
+| 05 | [URL-based access control can be circumvented](05-url-based-access-control-can-be-circumvented.md) | Practitioner | Bypass via X-Original-URL / X-Rewrite-URL | ✅ |
+| 06 | [Method-based access control can be circumvented](06-method-based-access-control-can-be-circumvented.md) | Practitioner | Switch POST to GET | ✅ |
+| 07 | [Multi-step process with no access control on one step](07-multi-step-process-with-no-access-control-on-one-s.md) | Practitioner | Missing control on intermediate step | ✅ |
+| 08 | [Referer-based access control](08-referer-based-access-control.md) | Practitioner | Spoofed Referer header | ✅ |
