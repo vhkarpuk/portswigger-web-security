@@ -5,7 +5,7 @@ vulnerability classes that matter most for web application penetration testing.
 Each write-up documents reconnaissance, exploitation (with raw HTTP request/response
 as evidence), impact, and remediation, mapped to OWASP Top 10 and CWE.
 
-**Scope:** 57 labs across 9 categories, the core web pentest surface.
+**Scope:** 57 labs across 9 categories — the core web pentest surface.
 Two out-of-band labs (blind SSRF / blind SQLi via Burp Collaborator) are out of scope:
 Collaborator requires Burp Suite Professional and is not available in Community Edition.
 
@@ -17,12 +17,12 @@ Collaborator requires Burp Suite Professional and is not available in Community 
 | [Access control / IDOR](02-access-control-idor/) | 8 / 8 | A01:2021 Broken Access Control |
 | [SSRF](03-ssrf/) | 4 / 4 | A10:2021 SSRF |
 | [File upload](04-file-upload/) | 1 / 6 | A05:2021 Security Misconfiguration |
-| [JWT](05-jwt/) | 2 / 6 | A07:2021 Identification and Authentication Failures |
+| [JWT](05-jwt/) | 3 / 6 | A07:2021 Identification and Authentication Failures |
 | [SQL injection](06-sql-injection/) | 5 / 8 | A03:2021 Injection |
 | [Authentication](07-authentication/) | 3 / 7 | A07:2021 Identification and Authentication Failures |
 | [Cross-site scripting](08-xss/) | 8 / 8 | A03:2021 Injection |
 | [API testing](09-api-testing/) | 4 / 4 | OWASP API Security Top 10 2023 |
-| **Total** | **41 / 57** | |
+| **Total** | **42 / 57** | |
 
 ## Categories (attack order)
 
